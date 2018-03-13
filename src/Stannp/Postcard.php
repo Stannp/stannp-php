@@ -4,6 +4,7 @@
  * 
  * 
  */
+
 namespace Stannp\Stannp;
 use Stannp\StannpPhp as StannpPhp;
 
@@ -11,7 +12,6 @@ use Stannp\StannpPhp as StannpPhp;
 
 class Postcard extends StannpPhp 
 {
-
     /**
      * Sends a postcard
      * 

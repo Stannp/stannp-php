@@ -6,7 +6,8 @@
  */
 
 namespace Stannp;
-use Stannp\Stannp\Postcard;
+
+
 
 class StannpPhp
 {

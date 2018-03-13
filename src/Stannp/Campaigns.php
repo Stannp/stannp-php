@@ -1,12 +1,15 @@
 <?php
-
-namespace Stannp\Stannp;
-
-use Stannp\StannpPhp as StannpPhp;
-
 /**
  * 
+ * 
+ * 
  */
+
+namespace Stannp\Stannp;
+use Stannp\StannpPhp as StannpPhp;
+
+
+
 class Campaigns extends StannpPhp
 {
     /**
