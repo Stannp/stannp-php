@@ -32,18 +32,18 @@ class Postcard extends StannpPhp
      * @return JSON 
      */
     public function sendPostcard(
+        $size,
+        $front,
+        $message,
+        $signature,
+        $recipientTitle,
+        $recipientFName,
+        $recipientLName,
+        $recipientAddr1,
+        $recipientAddr2,
+        $recipientCity,
+        $recipientPostcode,
         $test = true,
-        $size = "A6",
-        $front = "https://www.stannp.com/assets/samples/a6-postcard-front.jpg",
-        $message = "Hello World",
-        $signature = "https://www.stannp.com/assets/samples/signature-example.jpg",
-        $recipientTitle = "John",
-        $recipientFName = "Smith",
-        $recipientLName = "Smith",
-        $recipientAddr1 = "Unit 1 Willow Tree Court",
-        $recipientAddr2 = "Roundswell Business Park",
-        $recipientCity = "Barnstaple",
-        $recipientPostcode = "EX31 3TD",
         $recipientCountry = "GB"
     ) {
         $params = array (

@@ -29,7 +29,7 @@ class StannpPhp
             $api_key = getenv("STANNP_API_KEY");
         }
         if (!$api_key) {
-            //throw an exception 
+            throw new exception("API key not set");
         }
 
         $this->api_key = $api_key;
