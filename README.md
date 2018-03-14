@@ -26,7 +26,7 @@ You can find your api key at the bottom of your [Stannp settings page](https://d
 
 
 ## Usage
-As with the API the SDK is broken down into the separate components. A complete list of these classes are:
+As with the API the SDK is broken down into the separate components. The naming scheme for the classes and methods matches with the API docs; A complete list of these classes are:
 
 ```php
 use Stannp\API\Campaigns;
@@ -50,7 +50,7 @@ $user->getMe();
 use Stannp\API\Postcard
 
 $postcard = new Postcard();
-$postcard->sendPostcard(
+$postcard->create(
 	"A6",
 	"https://www.stannp.com/assets/samples/a6-postcard-front.jpg",
 	"Hello World",
