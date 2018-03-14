@@ -2,7 +2,7 @@
 # Stannp PHP SDK
 Our APIs provide programmatic access to your Stannp Bulk Mailer account. Things like configuring campaigns, feeding data and triggering mail pieces to be dispatched can all be achieved using simple yet secure HTTP requests. This SDK aims to provide a way to easily integrate our API into your app
 
-More information regarding parameters and API options can be found within the Stannp API documentation [here](https://www.stannp.com/direct-mail-api)
+More information regarding parameters and API options can be found within the Stannp API documentation [here](https://www.stannp.com/direct-mail-api).
 ## Setup
 
 best installed via composer
