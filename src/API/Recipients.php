@@ -21,7 +21,7 @@ class Recipients extends StannpPhp
      * 
      * @return encoded JSON object
      */
-    public function getRecipients($groupID, $limit = 100) 
+    public function list($groupID, $limit = 100) 
     {
         $path = "/recipients/list";
 
@@ -30,7 +30,7 @@ class Recipients extends StannpPhp
             "limit"    => $limit
         );
 
-        return $this->get($path, $params);
+        return $this->getRequest($path, $params);
     }
 
     /**
@@ -40,7 +40,7 @@ class Recipients extends StannpPhp
      * 
      * @return encoded JSON object
      */
-    public function getRecipient($recipientID) 
+    public function get($recipientID) 
     {
         $path = "/recipient/get";
 
@@ -48,7 +48,7 @@ class Recipients extends StannpPhp
             "recipient" => $recipientID
         );
 
-        return $this->get($path, $params);
+        return $this->getRequest($path, $params);
     }
 
     /**
@@ -67,7 +67,7 @@ class Recipients extends StannpPhp
      * 
      * @return encoded JSON object
      */
-    public function createRecipient(
+    public function new(
         $recipientFName,
         $recipientLName,
         $address1,
@@ -93,7 +93,7 @@ class Recipients extends StannpPhp
             'on_duplicate' => $onDuplicate
         );
 
-        return $this->post($path, $params);
+        return $this->postRequest($path, $params);
     }
 
     /**
@@ -103,7 +103,7 @@ class Recipients extends StannpPhp
      * 
      * @return encoded JSON object
      */
-    public function deleteRecipient($recipientID) 
+    public function delete($recipientID) 
     {
         $path = "/recipient/delete";
 
@@ -111,7 +111,7 @@ class Recipients extends StannpPhp
             "id" => $recipientID
         );
 
-        return $this->post($path, $params);
+        return $this->postRequest($path, $params);
     }
 
     /**
@@ -127,7 +127,7 @@ class Recipients extends StannpPhp
      * 
      * @return encoded JSON object
      */
-    public function validateAddress(
+    public function validate(
         $company,
         $address1,
         $address2,
@@ -148,7 +148,7 @@ class Recipients extends StannpPhp
         );
 
 
-        return $this->post($path, $params);
+        return $this->postRequest($path, $params);
     }
 
 
@@ -163,7 +163,7 @@ class Recipients extends StannpPhp
      * 
      * @return encoded JSON object
      */
-    public function importRecipients($file, $groupId, $duplicates, $noHeadings, $mappings) 
+    public function import($file, $groupId, $duplicates, $noHeadings, $mappings) 
     {
         $path = "/recipient/import";
 
@@ -175,6 +175,6 @@ class Recipients extends StannpPhp
             "mappings"    => $mappings
         );
 
-        return $this->post($path, $params);
+        return $this->postRequest($path, $params);
     }
 }

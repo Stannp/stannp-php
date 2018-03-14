@@ -82,7 +82,7 @@ class StannpPhp
      * 
      * @return $resposne An encoded JSON object
      */
-    public function get($path, $params = array()) 
+    public function getRequest($path, $params = array()) 
     {
         $response = $this->_call($path, $params, false);
         return $response;
@@ -96,7 +96,7 @@ class StannpPhp
      * 
      * @return JSON An encoded JSON object
      */
-    public function post($path, $params = array()) 
+    public function postRequest($path, $params = array()) 
     {
         $this->_call($path, $params);
         return $response;

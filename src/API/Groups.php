@@ -20,13 +20,14 @@ class Groups extends StannpPhp
      * 
      * @return encoded JSON object
      */
-    public function listGroups($limit = 100) 
+    public function list($limit = 100) 
     {
+        $pat = "/groups/list";
         $params = array (
             "limit" => $limit
         );
 
-        return $this->get("/groups/list", $params);
+        return $this->getRequest($path, $params);
     }
 
     /**
@@ -36,13 +37,14 @@ class Groups extends StannpPhp
      * 
      * @return encoded JSON object
      */
-    public function newGroup($name = "") 
+    public function new($name = "") 
     {
+        $path = "/groups/new";
         $params = array (
             "name" => $name
         );
 
-        return $this->post("/groups/new", $params);
+        return $this->postRequest($path, $params);
     }
 
     /**
@@ -53,13 +55,14 @@ class Groups extends StannpPhp
      * 
      * @return encoded JSON object
      */
-    public function addToGroup($groupId, $recipientsId) 
+    public function add($groupId, $recipientsId) 
     {
+        $path = "/groups/add/{$groupId}";
         $params = array (
             "recipients" => $recipientsID
         );
 
-        return $this->post("/groups/add/{$groupID}", $params);
+        return $this->postRequest($path, $params);
     }
 
     /**
@@ -70,13 +73,14 @@ class Groups extends StannpPhp
      * 
      * @return encoded JSON object
      */
-    public function removeFromGroup($groupId, $recipientsId) 
+    public function remove($groupId, $recipientsId) 
     {
+        $path = "/groups/remove/{$groupId}";
         $params = array (
             "recipients" => $recipientsID
         );
 
-        return $this->post("/groups/remove/{$groupID}", $params);
+        return $this->postRequest($path, $params);
     }
 
     /**
@@ -86,12 +90,13 @@ class Groups extends StannpPhp
      * 
      * @return encoded JSON object
      */
-    public function deleteGroup($groupId = -1) 
+    public function delete($groupId = -1) 
     {
+        $path = "/groups/delete";
         $params = array (
             "id" => $groupId
         );
     
-        return $this->post("/groups/delete", $params);
+        return $this->postRequest($path, $params);
     }
 }

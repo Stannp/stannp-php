@@ -25,7 +25,7 @@ class Letters extends StannpPhp
      * 
      * @return JSON An encoded JSON object
      */
-    public function createLetter(
+    public function create(
         $recipient,
         $background,
         $template,
@@ -45,7 +45,7 @@ class Letters extends StannpPhp
             "duplex"     => $duplex,
         );
 
-        return $this->post($path, $params);
+        return $this->postRequest($path, $params);
     }
 
 
@@ -58,7 +58,7 @@ class Letters extends StannpPhp
      * 
      * @return JSON An encoded JSON object
      */
-    public function postLetter(
+    public function post(
         $pdf,
         $country = "GB",
         $test = true
@@ -70,7 +70,7 @@ class Letters extends StannpPhp
             "pdf"     => $pdf
         );
 
-        return $this->post($path, $params);
+        return $this->postRequest($path, $params);
     }
 
     /**
@@ -85,7 +85,7 @@ class Letters extends StannpPhp
      * 
      * @return JSON An encoded JSON object
      */
-    public function createBatch(
+    public function batch(
         $csv,
         $background,
         $template,
@@ -103,6 +103,6 @@ class Letters extends StannpPhp
             "file"       => $file
         );
 
-        return $this->post($path, $params);
+        return $this->postRequest($path, $params);
     }
 }

@@ -31,7 +31,7 @@ class Postcard extends StannpPhp
      * 
      * @return JSON 
      */
-    public function sendPostcard(
+    public function create(
         $size,
         $front,
         $message,
@@ -62,6 +62,6 @@ class Postcard extends StannpPhp
             'recipient[country]'   => $recipientCountry
         );
 
-        return $this->post('/postcards/create', $params);
+        return $this->postRequest('/postcards/create', $params);
     }
 }

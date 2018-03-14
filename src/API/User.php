@@ -18,11 +18,11 @@ class User extends StannpPhp
      * 
      * @return JSON Encoded JSON object
      */
-    public function getMe() 
+    public function me() 
     {
         $path = "/users/me";
 
-        return $this->get($path);
+        return $this->getRequest($path);
     }
 
     /**
@@ -30,10 +30,10 @@ class User extends StannpPhp
      * 
      * @return JSON Encoded JSON object
      */
-    public function getBalance() 
+    public function balance() 
     {
         $path = "/accounts/balance";
 
-        return $this->get($path);
+        return $this->getRequest($path);
     }
 }

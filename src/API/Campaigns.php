@@ -17,11 +17,11 @@ class Campaigns extends StannpPhp
      * 
      * @return JSON Encoded JSON object
      */
-    public function getCampaigns() 
+    public function list() 
     {
         $path = "/campaigns/list";
 
-        return $this->get($path);
+        return $this->getRequest($path);
     }
 
     /**
@@ -30,14 +30,14 @@ class Campaigns extends StannpPhp
      * @param int $campaignId   Id of the specific campaign
      * @return JSON Encoded JSON object
      */
-    public function getCampaign($campaignId) 
+    public function get($campaignId) 
     {
         $path = "/campaigns/get";
         $params = array(
             "id" => $campaignId
         );
 
-        return $this->get($path, $params);
+        return $this->getRequest($path, $params);
     }
 
     /**
@@ -49,16 +49,16 @@ class Campaigns extends StannpPhp
      * 
      * @return JSON  Encoded JSON object
      */
-    public function createCampaign($campaignName, $campaignType, $campaignCode) 
+    public function draft($campaignName, $campaignType, $campaignCode) 
     {
-        $path = "/campaigns/create";
+        $path = "/campaigns/draft";
         $params = array(
             "name" => $campaignName,
             "type" => $campaignType,
             "code" => $campaignCode
         );
 
-        return $this->post($path, $params);
+        return $this->postRequest($path, $params);
     }
 
     /**
@@ -68,13 +68,13 @@ class Campaigns extends StannpPhp
      * 
      * @return JSON  Encoded JSON object
      */
-    public function deleteCampaign($campaignId) 
+    public function delete($campaignId) 
     {
-        $path = "/campaigns/list";
+        $path = "/campaigns/delete";
         $params = array(
             "id" => $campaignId
         );
 
-        return $this->post($path, $params);
+        return $this->postRequest($path, $params);
     }
 }

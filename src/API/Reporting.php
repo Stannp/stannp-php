@@ -28,7 +28,7 @@ class Reporting extends StannpPhp
             "endsate"   => $endDate
         );
 
-        return $this->get($path, $params);
+        return $this->getRequest($path, $params);
     }
 
     /**
@@ -41,10 +41,10 @@ class Reporting extends StannpPhp
      *
      * @return JSON Encoded JSON object
      */
-    public function listMailPieces($startDate, $endDate, $limit = 100, $offset = 0) 
+    public function list($startDate, $endDate, $limit = 100, $offset = 0) 
     {
         $path = "/reporting/list";
 
-        return $this->get($path);
+        return $this->getRequest($path);
     }
 }
