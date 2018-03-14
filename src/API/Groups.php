@@ -5,7 +5,7 @@
  * 
  */
 
-namespace Stannp\Stannp;
+namespace Stannp\API;
 use Stannp\StannpPhp as StannpPhp;
 
 

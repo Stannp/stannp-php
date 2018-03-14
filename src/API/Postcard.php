@@ -5,7 +5,7 @@
  * 
  */
 
-namespace Stannp\Stannp;
+namespace Stannp\API;
 use Stannp\StannpPhp as StannpPhp;
 
 
@@ -15,7 +15,6 @@ class Postcard extends StannpPhp
     /**
      * Sends a postcard
      * 
-     * @param bool   $test 
      * @param string $size 
      * @param string $front 
      * @param string $message 
@@ -27,6 +26,7 @@ class Postcard extends StannpPhp
      * @param string $recipientAddr2    Address line 1
      * @param string $recipientCity     Address City
      * @param string $recipientPostcode Address Postcode
+     * @param bool   $test 
      * @param string $recipientCountry  Address Country code
      * 
      * @return JSON 

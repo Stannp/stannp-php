@@ -26,20 +26,20 @@ class StannpPhp
     public function __construct($api_key = null) 
     {
         if (!$api_key) {
-            $api_key = getenv("STANNP_API_KEY");
+            $api_key = STANNP_API_KEY;
         }
-        if (!$api_key) {
-            throw new exception("API key not set");
+        if ($api_key) {
+            $this->api_key = $api_key;
+    
+            $this->ch = curl_init();
+    
+            curl_setopt($this->ch, CURLOPT_HEADER, false);
+            curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($this->ch, CURLOPT_CONNECTTIMEOUT, 30);
+            curl_setopt($this->ch, CURLOPT_TIMEOUT, 3);
+        } else {
+            return "Error: Stannp API key not set";
         }
-
-        $this->api_key = $api_key;
-
-        $this->ch = curl_init();
-
-        curl_setopt($this->ch, CURLOPT_HEADER, false);
-        curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($this->ch, CURLOPT_CONNECTTIMEOUT, 30);
-        curl_setopt($this->ch, CURLOPT_TIMEOUT, 3);
     }
     
     /**
@@ -49,7 +49,7 @@ class StannpPhp
      * @param array  $params The paramaters
      * @param bool   $post   POST or GET
      * 
-     * @return $resposne An encoded JSON object
+     * @return JSON An encoded JSON object
      */
     private function _call($path, $params, $post = true) 
     {
@@ -94,7 +94,7 @@ class StannpPhp
      * @param string $path   The URI to request
      * @param array  $params The paramaters
      * 
-     * @return $resposne An encoded JSON object
+     * @return JSON An encoded JSON object
      */
     public function post($path, $params = array()) 
     {

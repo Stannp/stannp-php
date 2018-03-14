@@ -1,12 +1,15 @@
 <?php
-
-namespace Stannp\Stannp;
-
-use Stannp\StannpPhp as StannpPhp;
-
 /**
  * 
  */
+
+
+
+
+namespace Stannp\API;
+use Stannp\StannpPhp as StannpPhp;
+
+
 class Reporting extends StannpPhp
 {
     /**

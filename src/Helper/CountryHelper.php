@@ -1,7 +1,10 @@
 <?php
 
 
-class CountryHelper {
+namespace Stannp\Stannp\helper;
+
+class CountryHelper 
+{
     /**
      * Trys to convert the input into the correct country code
      * @param string $country 
