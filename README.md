@@ -16,19 +16,17 @@ The autoloader must be required
 require  'YOUR/PROJECT/ROOT/vendor/autoload.php';
 ```
 The API key must either be passed as a parameter at the instantiation of the object or set as a constant within your application. This will not work without a valid API key
-
-You can find your api key at the bottom of your [Stannp settings page](https://dash.stannp.com/settings).
-
 #### Example:
 ```php
 define("STANNP_API_KEY", "API_KEY_HERE");
 or
 $user = new User("API_KEY_HERE");
 ```
+You can find your api key at the bottom of your [Stannp settings page](https://dash.stannp.com/settings).
 
 
 ## Usage
-As with the API the SDK is broken down into the separate components a complete list of these classes are:
+As with the API the SDK is broken down into the separate components. A complete list of these classes are:
 
 ```php
 use Stannp\API\Campaigns;
@@ -41,7 +39,7 @@ use Stannp\API\User;
 ```
 
 A complete list of methods can be found [~~here~~]().
-More information regarding parameters and API options can be found [here](https://www.stannp.com/direct-mail-api)
+More information regarding parameters and API options can be found within the Stannp API documentation [here](https://www.stannp.com/direct-mail-api)
 
 #### Usage examples:
 ```php
