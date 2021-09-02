@@ -53,7 +53,7 @@ class Postcard extends StannpPhp
             'message'              => $message,
             'signature'            => $signature,
             'recipient[title]'     => $recipientTitle,   
-            'recipient[firstname]' => $recipientFname,
+            'recipient[firstname]' => $recipientFName,
             'recipient[lastname]'  => $recipientLName,
             'recipient[address1]'  => $recipientAddr1,
             'recipient[address2]'  => $recipientAddr2,
