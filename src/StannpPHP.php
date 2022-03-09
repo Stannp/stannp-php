@@ -98,7 +98,7 @@ class StannpPhp
      */
     public function postRequest($path, $params = array()) 
     {
-        $this->_call($path, $params);
+        $response = $this->_call($path, $params);
         return $response;
     }
 
